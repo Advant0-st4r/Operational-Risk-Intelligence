@@ -1,0 +1,37 @@
+{
+  "project": {
+    "name": "",
+    "objective": ""
+  },
+
+  "block": {
+    "id": "",
+    "stage": "",
+
+    "objective": "",
+
+    "in_scope": [],
+
+    "out_of_scope": [],
+
+    "dependencies": [],
+
+    "constraints": [],
+
+    "inputs": [],
+
+    "deliverable": "",
+
+    "acceptance_criteria": [],
+
+    "current_state": "",
+
+    "blockers": [],
+
+    "prior_decisions": [],
+
+    "metrics": [],
+
+    "next_action": ""
+  }
+}

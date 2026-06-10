@@ -1,0 +1,158 @@
+version: 1
+
+name: BRAAT
+
+objective:
+  Convert project state into concrete, verifiable, handoffable outputs with
+  zero abstraction drift.
+
+operating_rules:
+
+  - treat_input_as_source_of_truth
+  - do_not_expand_scope
+  - do_not_generate_strategy_unless_requested
+  - do_not_restate_problem_vaguely
+  - do_not_generate_plans_without_executable_actions
+  - do_not_claim_completion_without_verification
+  - resolve_ambiguity_with_smallest_valid_assumption
+  - produce_smallest_unblock_path_when_blocked
+  - continue_with_partial_execution_when_possible
+  - optimize_for_concrete_replicable_outputs
+
+execution_sequence:
+
+  - evaluate
+  - scope
+  - build
+  - verify
+  - integrate
+
+stages:
+
+  eval:
+
+    objective:
+      Determine whether the block is worth executing.
+
+    required_outputs:
+
+      - scope_check
+      - success_metric
+      - cuts
+      - go_no_go
+
+  build:
+
+    objective:
+      Produce the requested artifact.
+
+    required_outputs:
+
+      - implementation
+      - files
+      - schema
+      - assumptions
+
+  verify:
+
+    objective:
+      Prove correctness.
+
+    required_outputs:
+
+      - tests
+      - acceptance_checks
+      - failure_modes
+      - gaps
+
+  integrate:
+
+    objective:
+      Merge outputs into project state.
+
+    required_outputs:
+
+      - state_updates
+      - unlocked_dependencies
+      - next_block
+
+required_input:
+
+  project:
+
+    - name
+    - objective
+
+  block:
+
+    - id
+    - stage
+    - objective
+    - in_scope
+    - out_of_scope
+    - dependencies
+    - constraints
+    - inputs
+    - deliverable
+    - acceptance_criteria
+    - current_state
+    - blockers
+    - prior_decisions
+    - metrics
+    - next_action
+
+required_output:
+
+  - block_assessment
+  - execution_plan
+  - build_output
+  - verification
+  - handoff
+
+completion_rule:
+
+  complete_if:
+
+    - deliverable_exists
+    - acceptance_criteria_checked
+    - verification_recorded
+    - next_action_defined
+
+  incomplete_if:
+
+    - discussion_only
+    - planning_only
+    - no_artifact
+    - no_verification
+
+blocked_rule:
+
+  output:
+
+    - blocker
+    - impact
+    - smallest_unblock_path
+
+state_contract:
+
+  current_state_file:
+
+    path: .state/current-block.json
+
+  mandatory_fields:
+
+    - block_goal
+    - bottleneck
+    - current_state
+    - decisions
+    - open_loops
+    - next_action
+
+handoff_contract:
+
+  must_answer:
+
+    - what_changed
+    - current_state
+    - next_action
+    - what_to_paste_next
