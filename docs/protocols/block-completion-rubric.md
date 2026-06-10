@@ -10,6 +10,11 @@ Determine whether a block is actually complete.
 
 A block is COMPLETE only if all conditions are true.
 
+Note: all the helper functions and logistical structuring of implementing each file are AI-written.
+Along with most of the code.
+
+Human aspect shining:
+
 ### Artifact
 
 - Deliverable exists.

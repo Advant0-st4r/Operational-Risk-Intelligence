@@ -1,0 +1,29 @@
+Next, I'd build the application DTOs and commands before services.
+
+Why?
+
+Current:
+  domain_objects
+
+Need:
+  user_actions
+
+Missing:
+  application_contracts
+
+Users don't invoke:
+  Incident
+  Severity
+  Cognition
+
+Users invoke:
+
+  Create Case
+
+  Identify Root Cause
+
+  Select Resolution
+
+  Validate Resolution
+
+  Capture Learning

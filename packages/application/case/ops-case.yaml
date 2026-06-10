@@ -1,0 +1,17 @@
+OperationalCase:
+
+  incident
+
+  severity
+
+  cognition
+
+  priority
+
+  rootCause
+
+  resolution
+
+  learning
+
+  timeline
