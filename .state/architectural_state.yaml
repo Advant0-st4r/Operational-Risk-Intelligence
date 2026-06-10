@@ -1,0 +1,313 @@
+```yaml
+project:
+  name: operational-cognition
+  status: active_foundation_phase
+
+philosophy:
+  methodology: BRAAT
+
+  core_rule:
+    build_only_what_we_own
+
+  classifications:
+
+    MUST_BUILD_MANUALLY:
+      description: >
+        Core competitive logic, judgment systems,
+        cognition models, domain definitions,
+        and organizational decision-making rules.
+
+    HYBRID:
+      description: >
+        Manual ownership layer with AI-assisted
+        implementation and plumbing.
+
+    SAFE_TO_VIBECODE:
+      description: >
+        Commodity infrastructure and non-differentiating
+        implementation details.
+
+    PROVIDED:
+      description: >
+        Existing standards, protocols, frameworks,
+        libraries, and infrastructure.
+
+current_thesis:
+
+  problem:
+    Most systems manage incidents.
+
+  solution:
+    Model operational cognition itself.
+
+  primary_questions:
+
+    - What happened?
+    - Why did it happen?
+    - What matters?
+    - What should be learned?
+    - What should be done?
+
+  anti_goal:
+
+    - Ticket management
+    - Workflow bureaucracy
+    - Generic observability dashboards
+
+domain_progress:
+
+  stage_1_foundational_language:
+    status: complete
+
+    deliverables:
+
+      - ids.ts
+      - enums.ts
+
+    objective:
+      Establish canonical vocabulary.
+
+  stage_2_core_domain_entities:
+    status: complete
+
+    deliverables:
+
+      - incident.ts
+      - incident-version.ts
+      - service.ts
+      - team.ts
+      - root-cause.ts
+      - resolution.ts
+
+    objective:
+      Establish primary operational cognition entities.
+
+  stage_3_incident_identity:
+    status: complete
+
+    deliverables:
+
+      - deduplication.contract.ts
+
+    ownership_decisions:
+
+      deduplication_is_reversible: true
+
+      false_positives_are_expensive: true
+
+      cross_service_deduplication_allowed: true
+
+      duplicate_requires_root_cause_alignment: true
+
+      same_symptoms_not_sufficient: true
+
+      same_impact_not_sufficient: true
+
+      different_root_causes:
+        implies: different_incidents
+
+  stage_4_evidence_vocabulary:
+    status: complete
+
+    deliverables:
+
+      - deduplication.types.ts
+
+    objective:
+      Define admissible evidence categories.
+
+    ownership_decisions:
+
+      root_cause_required_for_duplicate_determination: true
+
+      evidence_categories:
+
+        - operational
+        - causal
+        - impact
+        - temporal
+        - service
+        - metadata
+
+      decision_outcomes:
+
+        - duplicate
+        - not_duplicate
+        - insufficient_evidence
+
+  stage_5_operational_cognition_lifecycle:
+    status: complete
+
+    deliverables:
+
+      - incident.lifecycle.ts
+
+    lifecycle:
+
+      observed:
+        requirement:
+          signal_exists
+
+      understood:
+        requirement:
+          root_cause_identified
+
+      acted_upon:
+        requirement:
+          remediation_selected
+
+      validated:
+        requirement:
+          expected_outcome_confirmed
+
+      archived:
+        requirement:
+          no_remaining_actionable_value
+
+    ownership_decisions:
+
+      incident_not_understood_without_root_cause: true
+
+      incident_cannot_be_acted_upon_without_resolution: true
+
+architecture_state:
+
+  completed_manual_boundaries:
+
+    - domain_language
+    - incident_identity
+    - evidence_vocabulary
+    - operational_lifecycle
+
+  intentionally_not_built_yet:
+
+    - matching_algorithms
+    - scoring_systems
+    - weighting_systems
+    - workflow_engines
+    - state_machine_engines
+    - persistence_logic
+    - orchestration
+    - notification_systems
+    - automation_rules
+
+  rationale:
+    Ownership before implementation.
+
+current_domain_model:
+
+  incident:
+    role: primary_unit_of_cognition
+
+  root_cause:
+    role: explanation_of_incident
+
+  resolution:
+    role: chosen_response
+
+  evidence:
+    role: supporting_signal
+
+  lifecycle:
+    role: cognition_progression
+
+next_major_boundaries:
+
+  severity_model:
+    status: pending
+    classification: MUST_BUILD_MANUALLY
+
+    key_question:
+      What does severity actually measure?
+
+    candidate_dimensions:
+
+      - impact
+      - urgency
+      - risk
+      - cognitive_priority
+
+  prioritization_model:
+    status: pending
+    classification: MUST_BUILD_MANUALLY
+
+    key_question:
+      What deserves attention first?
+
+  resolution_effectiveness:
+    status: pending
+    classification: MUST_BUILD_MANUALLY
+
+    key_question:
+      What makes a remediation successful?
+
+  knowledge_capture:
+    status: pending
+    classification: MUST_BUILD_MANUALLY
+
+    key_question:
+      What operational knowledge should persist?
+
+future_hybrid_layers:
+
+  deduplication_engine:
+    depends_on:
+      - deduplication.contract.ts
+      - deduplication.types.ts
+
+  lifecycle_validation:
+    depends_on:
+      - incident.lifecycle.ts
+
+  scoring_frameworks:
+    depends_on:
+      - severity_model
+
+  repository_services:
+    depends_on:
+      - completed_domain_layer
+
+  persistence:
+    depends_on:
+      - finalized_domain_model
+
+portfolio_signal:
+
+  demonstrates:
+
+    - domain_modeling
+    - systems_thinking
+    - architectural_reasoning
+    - ownership_identification
+    - boundary_design
+    - operational_cognition_design
+
+  employer_takeaway:
+    This repository models organizational operational
+    cognition rather than merely incident management.
+
+current_maturity:
+
+  ownership_definition: high
+
+  implementation_definition: intentionally_low
+
+  architectural_discipline: high
+
+  domain_stability: emerging
+
+  readiness_for_infrastructure: not_yet
+
+next_recommended_move:
+
+  file:
+    incident.severity.ts
+
+  classification:
+    MUST_BUILD_MANUALLY
+
+  reason:
+    Severity determines how cognition,
+    attention, prioritization, and escalation
+    are allocated throughout the system.
+```
