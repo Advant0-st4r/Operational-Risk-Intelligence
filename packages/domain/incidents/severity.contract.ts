@@ -38,9 +38,10 @@ export const UrgencyMeasures: readonly MeasureContract[] = [
 ];
 
 /**
- * Declares which higher-level facets compose severity and who owns the derivation decision.
+ * Declares which facets are higher-level in priority, that compose severity and who owns the derivation decision.
  * This is a constitution-level statement: severity is derived from impact and urgency.
  */
+
 export interface SeverityConstitution {
   derivedFrom: readonly ('impact' | 'urgency')[];
   steward: OwnerId; // who decides policy for derivation (not the algorithm)
