@@ -1,19 +1,19 @@
 {
   "block_goal": "establish BRAAT execution substrate",
   "bottleneck": "context loss and state fragmentation",
-
-  "current_state": "execution contract created, template created, completion rubric in progress",
-
+  "current_state": "execution contract created, template created, event publisher frozen, V1 execution loop ready for first workflow implementation, project at v0.9 (approaching v1.0 Operational Awareness)",
   "decisions": [
     "BRAAT is the canonical execution contract",
     "all blocks use the same template",
-    "every block leaves a recoverable artifact"
+    "every block leaves a recoverable artifact",
+    "event publishing is the required next link in the runtime chain",
+    "v1.0 target: Operational Awareness (Case → Timeline → History)"
   ],
-
   "open_loops": [
     "finalize completion rubric",
-    "define state restoration protocol"
+    "define state restoration protocol",
+    "implement incident-intake.workflow.ts",
+    "close gap from v0.9 to v1.0: TimelineRepository, Severity, Timeline Events"
   ],
-
-  "next_action": "create recovery-protocol.md"
+  "next_action": "create packages/runtime/events/event-publisher.ts and packages/infrastructure/events/in-memory-event-publisher.ts"
 }
